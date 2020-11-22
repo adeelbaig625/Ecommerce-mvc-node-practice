@@ -39,6 +39,7 @@ exports.postAddProduct = (req, res, next) => {
   product.save();
   res.redirect('/');
 };
+
 exports.postEditProduct=(req,res,next)=>
 {
   const id=req.body.id
