@@ -38,4 +38,29 @@ module.exports=class Cart
         });
     });
    } 
+static deleteProduct(id,productPrice)
+{
+    fs.readFile(p,(err,fileContent)=>{
+        if(err)
+        {
+            return;
+            JSON.parse
+        }
+        const updatedCart={...(JSON.parse(fileContent))};
+        const product=updatedCart.products.find(p=>p.id==id)
+        if(!product)
+        {
+            return;
+        }
+        const productQty=product.qty
+        updatedCart.products=updatedCart.products.filter(p=>p.id!==id)
+        updatedCart.totalprice-=productPrice*productQty
+        fs.writeFile(p,JSON.stringify(updatedCart),err=>
+        {
+            if(err)
+            {console.log(err)}
+        })
+    }
+    )
+}
 }

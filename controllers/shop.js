@@ -48,8 +48,8 @@ exports.getProduct=(req,res,next)=>
     {
      res.render('shop/product-detail',{
       path: '',
-       product:product,
-       pageTitle: product.title
+      product:product,
+      pageTitle:'e-commerce web'
      })
     })
 };
